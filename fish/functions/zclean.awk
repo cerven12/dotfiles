@@ -1,0 +1,1 @@
+/Users/takuto/.config/fisherman/z/functions/zclean.awk

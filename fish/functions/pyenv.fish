@@ -1,0 +1,1 @@
+/Users/takuto/.config/fisherman/pyenv/functions/pyenv.fish

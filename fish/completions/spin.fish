@@ -1,0 +1,1 @@
+/Users/takuto/.config/fisherman/Spin/completions/spin.fish
