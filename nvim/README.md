@@ -18,4 +18,5 @@
 - [comfortable-motion.vim](https://github.com/yuttie/comfortable-motion.vim)
 - [vim-easymotion](https://github.com/easymotion/vim-easymotion)
 - [open-browser.vim](https://github.com/tyru/open-browser.vim)
+- [yapf](https://github.com/google/yapf)
 
