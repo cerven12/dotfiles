@@ -46,14 +46,15 @@ if dein#load_state('~/.cache/dein')
 
   " Add or remove your plugins here like this:
   " call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
+  let s:toml_dir = expand('~/.config/nvim')
+  call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
+  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
+    if !has('nvim')
    call dein#add('roxma/nvim-yarp')
    call dein#add('roxma/vim-hug-neovim-rpc')
   endif
 let g:deoplete#enable_at_startup = 1
-  let s:toml_dir = expand('~/.config/nvim')
-  call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
-  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
+
   " Required:
   call dein#end()
   call dein#save_state()
