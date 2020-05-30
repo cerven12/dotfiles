@@ -1,3 +1,22 @@
+" defult nop
+vnoremap  <Up>     <nop>
+vnoremap  <Down>   <nop>
+vnoremap  <Left>   <nop>
+vnoremap  <Right>  <nop>
+vnoremap  <BS>     <nop>
+inoremap  <Up>     <nop>
+inoremap  <Down>   <nop>
+inoremap  <Left>   <nop>
+inoremap  <Right>  <nop>
+inoremap  <BS>     <nop>
+noremap   <Up>     <nop>
+noremap   <Down>   <nop>
+noremap   <Left>   <nop>
+noremap   <Right>  <nop>
+noremap   <BS>     <nop>
+
+"------------------------------------
+"    setting
 set number             "行番号を表示
 set autoindent         "改行時に自動でインデントする
 set tabstop=4          "タブを何文字の空白に変換するか
@@ -27,8 +46,37 @@ set ambiwidth=double
 set encoding=UTF-8
 " insert -> nomal 遅延を防ぐ
 set ttimeoutlen=50
-"=================dein================
-"dein Scripts-----------------------------
+" スワップファイルの作成先を変更
+set noswapfile
+" ヤンクをクリップボードへ繋ぐ
+set clipboard=unnamed
+" ビープ音を消す
+set belloff=all
+set title
+
+"-------------------------------------
+"               Key Bind
+"-------------------------------------
+" xで削除した時はヤンクしない
+vnoremap x "_x
+nnoremap x "_x
+
+" ^ で行頭に移動
+" $  で行末に移動
+
+" 画面分割系
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap ss :<C-u>sp<CR><C-w>j
+nnoremap sv :<C-u>vs<CR><C-w>l
+
+" Pluginのキーマップ
+map <C-n> :NERDTreeToggle<CR>
+"-------------------------------------
+"                 dein
+"-------------------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
