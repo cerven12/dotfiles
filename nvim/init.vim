@@ -130,3 +130,10 @@ autocmd ColorScheme * highlight Comment ctermfg=none
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean'
 colorscheme material
+
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
