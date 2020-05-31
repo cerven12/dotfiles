@@ -74,7 +74,6 @@ nnoremap sv :<C-u>vs<CR><C-w>l
 
 " Pluginのキーマップ
 map <C-n> :NERDTreeToggle<CR>
-map <C-S-m> :MarkdownPreview<CR>
 "-------------------------------------
 "                 dein
 "-------------------------------------
