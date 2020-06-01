@@ -15,6 +15,10 @@ repo = 'itchyny/lightline.vim'
 repo = 'simeji/winresizer'
 
 [[plugins]]
+repo = 'tomtom/tcomment_vim'
+# Ctrl + v -> Ctrl + -
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 build = '''
@@ -80,3 +84,9 @@ repo = 'rhysd/clever-f.vim'
 
 [[plugins]]
 repo = 'kaicataldo/material.vim'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup = 1
+'''

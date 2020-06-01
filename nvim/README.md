@@ -11,7 +11,6 @@
 - [goyo.vim](https://github.com/junegunn/goyo.vim)
 - [ultisnips](https://github.com/SirVer/ultisnips)
 - [tagbar](https://github.com/majutsushi/tagbar)
-- [nerdcommenter](https://github.com/preservim/nerdcommenter)
 - [supertab](https://github.com/ervandew/supertab)
 - [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 - [vim-expand-region](https://github.com/terryma/vim-expand-region)
