@@ -14,7 +14,8 @@ set -g theme_display_git_master_branch yes
 set -g theme_color_scheme dracula
 set -g theme_display_nvm no
 
-
+# ls command color change => chien
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # below is not use now
 # Fish git prompt

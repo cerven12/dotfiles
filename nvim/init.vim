@@ -75,6 +75,8 @@ nnoremap sv :<C-u>vs<CR><C-w>l
 " Pluginのキーマップ
 map <C-n> :NERDTreeToggle<CR>
 map <C-S-m> :MarkdownPreview<CR>
+
+map <C-S-k> :FixWhitespace<CR>
 "-------------------------------------
 "                 dein
 "-------------------------------------
@@ -128,9 +130,11 @@ let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linen
 " Color
 autocmd ColorScheme * highlight Comment ctermfg=none
 let g:material_terminal_italics = 1
-let g:material_theme_style = 'ocean'
+let g:material_theme_style = 'palenight'
 colorscheme material
 
+" Font
+" https://github.com/ryanoasis/nerd-fonts
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()

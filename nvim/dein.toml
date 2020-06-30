@@ -4,6 +4,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
+
 [[plugins]]
 repo = 'Shougo/defx.nvim'
 depends = ["defx-git"]
@@ -13,80 +14,53 @@ repo = 'itchyny/lightline.vim'
 
 [[plugins]]
 repo = 'simeji/winresizer'
+# Window resize
+# Ctrl + E => hjkl
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
-# Ctrl + v -> Ctrl + -
-
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-rev = 'release'
-build = '''
-  git checkout release
-'''
-hook_add = '''
-  inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  nmap <silent> gi <Plug>(coc-implementation)
-  nmap <silent> gr <Plug>(coc-references)
-'''
+# comment out
+# Ctrl + v -> Ctrl + - * 2
 
 [[plugins]]
 repo = 'iamcco/markdown-preview.nvim'
 on_ft = "['markdown', 'pandoc.markdown', 'rmd']"
 build = "sh -c 'cd app & yarn install'"
+# Ctrl + M
 
 [[plugins]]
 repo = 'preservim/nerdtree'
 hook_add = '''
   let g:NERDTreeQuitOnOpen = 1
 '''
+# Ctrl + n => Toggle
 
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
+# NERDTree showing git status flags
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
-repo = 'Shougo/vimfiler'
-
-[[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
+# :FixWhitespace => white space delete.
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+# :Gstatus
+# :Gdiff
+# :Gwrite git add
+# :Gblame
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-
-[[plugins]]
-repo = 'rhysd/clever-f.vim'
+# display git diffidence. [c & ]c is Jump hank.
 
 [[plugins]]
 repo = 'kaicataldo/material.vim'
 
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
-hook_add = '''
-  let g:indent_guides_enable_on_vim_startup = 1
-'''
