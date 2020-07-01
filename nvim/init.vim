@@ -96,7 +96,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
-  " call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/deoplete.nvim')
   let s:toml_dir = expand('~/.config/nvim')
   call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
   call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
