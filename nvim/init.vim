@@ -1,18 +1,12 @@
 " defult nop
 vnoremap  <Up>     <nop>
 vnoremap  <Down>   <nop>
-vnoremap  <Left>   <nop>
-vnoremap  <Right>  <nop>
 " vnoremap  <BS>     <nop>
 inoremap  <Up>     <nop>
 inoremap  <Down>   <nop>
-inoremap  <Left>   <nop>
-inoremap  <Right>  <nop>
 " inoremap  <BS>     <nop>
 noremap   <Up>     <nop>
 noremap   <Down>   <nop>
-noremap   <Left>   <nop>
-noremap   <Right>  <nop>
 " noremap   <BS>     <nop>
 
 "------------------------------------
@@ -74,9 +68,9 @@ nnoremap sv :<C-u>vs<CR><C-w>l
 
 " Pluginのキーマップ
 map <C-n> :NERDTreeToggle<CR>
-map <C-S-m> :MarkdownPreview<CR>
+map <C-m> :MarkdownPreview<CR>
 
-map <C-S-k> :FixWhitespace<CR>
+map <C-k> :FixWhitespace<CR>
 "-------------------------------------
 "                 dein
 "-------------------------------------
