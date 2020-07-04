@@ -80,15 +80,19 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'kaicataldo/material.vim'
 
+
 [[plugins]]
 repo  = 'prettier/vim-prettier'
 build =  'yarn add'
 hook_source = '''
-  " @formatアノテーションを持ったファイルの自動フォーマットを無効にする
-  let g:prettier#autoformat = 0
+let g:prettier#autoformat = 0
+let g:prettier#autoformat_require_pragma = 0
 
-  " Prettierのパースエラーをquickfixに表示しない
-  let g:prettier#quickfix_enabled = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+'''
 
-  autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss,*.json,*.md PrettierAsync
+[[plugins]]
+repo = 'alvan/vim-closetag'
+hook_add = '''
+  let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.php,*.vue'
 '''
