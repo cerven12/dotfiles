@@ -85,9 +85,8 @@ repo = 'kaicataldo/material.vim'
 repo  = 'prettier/vim-prettier'
 build =  'yarn add'
 hook_source = '''
-let g:prettier#autoformat = 0
+let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
-
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 '''
 
