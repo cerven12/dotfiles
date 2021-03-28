@@ -1,64 +1,20 @@
-" defult nop
+
+"--------------------------------------------
+" Key Bind
+" -------------------------------------------
+" Visual mode
 vnoremap  <Up>     <nop>
 vnoremap  <Down>   <nop>
-" vnoremap  <BS>     <nop>
-inoremap  <Up>     <nop>
-inoremap  <Down>   <nop>
-" inoremap  <BS>     <nop>
+
+" Normal mode
 noremap   <Up>     <nop>
 noremap   <Down>   <nop>
-" noremap   <BS>     <nop>
 
-"------------------------------------
-"    setting
-set number             "行番号を表示
-set autoindent         "改行時に自動でインデントする
-set tabstop=4          "タブを何文字の空白に変換するか
-set cursorline         " カーソルラインをハイライト
-set shiftwidth=2       "自動インデント時に入力する空白の数
-set expandtab          "タブ入力を空白に変換
-set splitright         "画面を縦分割する際に右に開く
-set clipboard=unnamed  "yank した文字列をクリップボードにコピー
-set backspace=indent,eol,start
-set hls                "検索した文字をハイライトする
-" インクリメンタルサーチ. １文字入力毎に検索を行う
-set incsearch
-" 検索パターンに大文字小文字を区別しない
-set ignorecase
-" 検索パターンに大文字を含んでいたら大文字小文字を区別する
-set smartcase
-set encoding=utf-8
-scriptencoding utf-8
-" 保存時の文字コード
-set fileencoding=utf-8
-" 読み込み時の文字コードの自動判別. 左側が優先される
-set fileencodings=ucs-boms,utf-8,euc-jp,cp932
-" 改行コードの自動判別. 左側が優先される
-set fileformats=unix,dos,mac
-" □や○文字が崩れる問題を解決"
-set ambiwidth=double
-set encoding=UTF-8
-" insert -> nomal 遅延を防ぐ
-set ttimeoutlen=50
-" スワップファイルの作成先を変更
-set noswapfile
-" ヤンクをクリップボードへ繋ぐ
-set clipboard=unnamed
-" ビープ音を消す
-set belloff=all
-set title
-
-"-------------------------------------
-"               Key Bind
-"-------------------------------------
-" xで削除した時はヤンクしない
+" Do not yank characters deleted by x.
 vnoremap x "_x
 nnoremap x "_x
 
-" ^ で行頭に移動
-" $  で行末に移動
-
-" 画面分割系
+" Screen splitting.
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
@@ -66,16 +22,48 @@ nnoremap sh <C-w>h
 nnoremap ss :<C-u>sp<CR><C-w>j
 nnoremap sv :<C-u>vs<CR><C-w>l
 
-" Pluginのキーマップ
+"-------------------------------------------
+" Settings
+" ------------------------------------------
+set number             " Display the line number.
+set showmatch          " Display the corresponding parentheses.
+set autoindent         " Indent at line breaks.
+set tabstop=4          " Number of blank characters in tabs.
+set cursorline         " Highlight the cousor line.
+set shiftwidth=2       " Number of spaces to be filled in by auto-indent.
+set expandtab          " Convert tabs to spaces.
+set splitright         " The split screen opens to the right.
+set clipboard=unnamed  " Copy the yanked string to the clipboard.
+set showmatch          " Jumps to the corresponding parentheses as you type.
+set matchtime=1        " ⇡ Specify the time to jump.
+set backspace=indent,eol,start
+set pumheight=10       " Height of the completion menu
+set hls                " Highlight the searched text.
+set incsearch          " Search one character at a time.
+set ignorecase         " The search is not case-sensitive.
+set smartcase          " If the search pattern contains uppercase letters, it is case-sensitive.
+set encoding=utf-8
+scriptencoding utf-8
+set fileencoding=utf-8
+set ambiwidth=double   " Symbols are displayed as two half-width characters.
+set ttimeoutlen=50
+set noswapfile
+set belloff=all
+set title
+set showcmd            " Displays the command being entered in the status.
+syntax enable
+
+
+" Plugin
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :MarkdownPreview<CR>
-
 map <C-k> :FixWhitespace<CR>
+
 "-------------------------------------
 "                 dein
 "-------------------------------------
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
 
 " Required:
@@ -98,7 +86,10 @@ if dein#load_state('~/.cache/dein')
    call dein#add('roxma/nvim-yarp')
    call dein#add('roxma/vim-hug-neovim-rpc')
   endif
-let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_at_startup = 1
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+
 
   " Required:
   call dein#end()
@@ -109,14 +100,35 @@ endif
 filetype plugin indent on
 syntax enable
 
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 
-"End dein Scripts-------------------------
-" カラーテーマの指定
-let g:airline_theme = 'minimalist'
-" パワーラインでかっこよく
-let g:airline_powerline_fonts = 1
-" タブバーをかっこよく
-let g:airline#extensions#tabline#enabled = 1
+
+"----------------------------------
+" Vim Tab Setting
+" ---------------------------------"
+let mapleader = "\<Space>"
+nnoremap <silent> <leader>tf :<c-u>tabfirst<cr>
+nnoremap <silent> <leader>tl :<c-u>tablast<cr>
+nnoremap <silent> <leader>tn :<c-u>tabnext<cr>
+nnoremap <silent> <leader>tN :<c-u>tabNext<cr>
+nnoremap <silent> <leader>tp :<c-u>tabprevious<cr>
+nnoremap <silent> <leader>te :<c-u>tabedit<cr>
+nnoremap <silent> <leader>tc :<c-u>tabclose<cr>
+nnoremap <silent> <leader>to :<c-u>tabonly<cr>
+nnoremap <silent> <leader>ts :<c-u>tabs<cr>
+nnoremap <silent> <leader>tr :<c-u>TabRecent<cr>
+
+"----------------------------------
+" AirLine
+"----------------------------------
+set laststatus=2
+let g:airline_theme = 'wombat' " Color Theme
+let g:airline_powerline_fonts = 1  " Acticate powerline font
+let g:airline#extensions#tabline#enabled = 1  " Activate tabs
+let g:airline#extensions#tabline#buffer_idx_mode = 1 " Display tab index
 " 選択行列の表示をカスタム(デフォルトだと長くて横幅を圧迫するので最小限に)
 let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
 
@@ -135,3 +147,4 @@ if dein#check_install()
   call dein#install()
 endif
 
+autocmd FileType vue syntax sync fromstart
