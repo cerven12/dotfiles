@@ -81,19 +81,11 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
-  call dein#add('Shougo/deoplete.nvim')
   let s:toml_dir = expand('~/.config/nvim')
   call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
   call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
     if !has('nvim')
-   call dein#add('roxma/nvim-yarp')
-   call dein#add('roxma/vim-hug-neovim-rpc')
   endif
-  let g:deoplete#enable_at_startup = 1
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-
-
 
   " Required:
   call dein#end()
@@ -136,7 +128,6 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1 " Display tab index
 " 選択行列の表示をカスタム(デフォルトだと長くて横幅を圧迫するので最小限に)
 let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
 
-
 " Color
 autocmd ColorScheme * highlight Comment ctermfg=none
 let g:material_terminal_italics = 1
@@ -151,4 +142,29 @@ if dein#check_install()
   call dein#install()
 endif
 
+
+
+
+" vue syntax highlighting
 autocmd FileType vue syntax sync fromstart
+
+" jsonc syntax highlighting
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" coc.nvim
+" coc-prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" coc-snippets
+" Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+let g:coc_snippet_next = '<tab>'
+
