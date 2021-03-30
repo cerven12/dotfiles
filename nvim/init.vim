@@ -56,12 +56,6 @@ set title
 set showcmd            " Displays the command being entered in the status.
 syntax enable
 
-
-" Plugin
-map <C-n> :NERDTreeToggle<CR>
-map <C-m> :MarkdownPreview<CR>
-map <C-k> :FixWhitespace<CR>
-
 "-------------------------------------
 "                 dein
 "-------------------------------------
@@ -94,7 +88,6 @@ endif
 
 " Required:
 filetype plugin indent on
-syntax enable
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
@@ -130,9 +123,8 @@ let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linen
 
 " Color
 autocmd ColorScheme * highlight Comment ctermfg=none
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'palenight'
-colorscheme material
+ set background=dark
+ colorscheme solarized
 
 " Font
 " https://github.com/ryanoasis/nerd-fonts

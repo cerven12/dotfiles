@@ -3,7 +3,16 @@ repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
-depends = ["defx-git"]
+depends = ["defx-git",'defx-icons']
+hook_add = """
+  source ~/.config/nvim/plugins/defx.rc.vim
+"""
+
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+
+[[plugins]]
+repo = 'kristijanhusak/defx-git'
 
 [[plugins]]
 repo = 'simeji/winresizer'
@@ -11,26 +20,7 @@ repo = 'simeji/winresizer'
 # Ctrl + E => hjkl
 
 [[plugins]]
-repo = 'tomtom/tcomment_vim'
-# comment out
-# Ctrl + v -> Ctrl + --
-
-[[plugins]]
-repo = 'iamcco/markdown-preview.nvim'
-on_ft = "['markdown', 'pandoc.markdown', 'rmd']"
-build = "sh -c 'cd app & yarn install'"
-# Ctrl + M
-
-[[plugins]]
-repo = 'preservim/nerdtree'
-hook_add = '''
-  let g:NERDTreeQuitOnOpen = 1
-'''
-# Ctrl + n => Toggle
-
-[[plugins]]
-repo = 'Xuyuanp/nerdtree-git-plugin'
-# NERDTree showing git status flags
+repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -52,9 +42,6 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 # display git diffidence. [c & ]c is Jump hank.
-
-# [[plugins]]
-# repo = 'kaicataldo/material.vim'
 
 [[plugins]]
 repo = 'alvan/vim-closetag'
