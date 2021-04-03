@@ -55,6 +55,7 @@ set noswapfile
 set belloff=all
 set title
 set showcmd            " Displays the command being entered in the status.
+filetype plugin on
 syntax enable
 
 "-------------------------------------
@@ -99,9 +100,16 @@ endif
 "                ColorScheme
 " -------------------------------------
 let g:solarized_termcolors=256
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Theme
 syntax enable
-set background=dark
-colorscheme solarized
+colorscheme tender
 
 "----------------------------------
 " Vim Tab Setting
@@ -121,13 +129,14 @@ nnoremap <silent> <leader>tr :<c-u>TabRecent<cr>
 "----------------------------------
 " AirLine
 "----------------------------------
-" set laststatus=2
+set laststatus=2
+let g:airline_theme = 'tender'
 " let g:airline_theme = 'wombat' " Color Theme
-" let g:airline_powerline_fonts = 1  " Acticate powerline font
-" let g:airline#extensions#tabline#enabled = 1  " Activate tabs
-" let g:airline#extensions#tabline#buffer_idx_mode = 1 " Display tab index
+let g:airline_powerline_fonts = 1  " Acticate powerline font
+let g:airline#extensions#tabline#enabled = 1  " Activate tabs
+let g:airline#extensions#tabline#buffer_idx_mode = 1 " Display tab index
 " 選択行列の表示をカスタム(デフォルトだと長くて横幅を圧迫するので最小限に)
-" let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
 
 " Font
 " https://github.com/ryanoasis/nerd-fonts
@@ -139,5 +148,29 @@ endif
 
 " vue syntax highlighting
 autocmd FileType vue syntax sync fromstart
+
+
+" ------------------------------------
+"              NERD Comment
+" ------------------------------------
+ let g:ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction
 
 

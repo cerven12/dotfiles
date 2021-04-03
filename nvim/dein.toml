@@ -20,10 +20,17 @@ repo = 'simeji/winresizer'
 # Ctrl + E => hjkl
 
 [[plugins]]
-repo = 'altercation/vim-colors-solarized'
+repo = 'tomasr/molokai'
+[[plugins]]
+repo = 'hzchirs/vim-material'
+[[plugins]]
+repo = 'jacoborus/tender'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:cpp_class_scope_highlight = 1   
+'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
@@ -63,4 +70,11 @@ merged = 0
 rev = "release"
 hook_add = '''
   source ~/.config/nvim/plugins/coc.rc.vim
+'''
+
+[[plugins]]
+repo = 'preservim/nerdcommenter'
+hook_add = '''
+let g:NERDSpaceDelims=1
+let g:NERDDefaultAlign='left'
 '''

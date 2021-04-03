@@ -5,3 +5,6 @@ hook_add = '''
 let g:vue_pre_processors = ['scss','typescript']
 '''
 
+[[plugins]]
+repo = 'cespare/vim-toml'                                    
+on_ft = 'toml'
