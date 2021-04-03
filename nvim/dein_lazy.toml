@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
+hook_add = '''
+let g:vue_pre_processors = ['scss','typescript']
+'''
+

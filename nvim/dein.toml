@@ -27,10 +27,15 @@ repo = 'vim-airline/vim-airline'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
-
-[[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
-# :FixWhitespace => white space delete.
+hook_add = '''
+set laststatus=2
+let g:airline_theme = 'wombat' " Color Theme
+let g:airline_powerline_fonts = 1  " Acticate powerline font
+let g:airline#extensions#tabline#enabled = 1  " Activate tabs
+let g:airline#extensions#tabline#buffer_idx_mode = 1 " Display tab index
+" 選択行列の表示をカスタム(デフォルトだと長くて横幅を圧迫するので最小限に)
+let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+'''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -51,12 +56,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'gko/vim-coloresque'
-
-[[plugins]]
-repo = 'posva/vim-vue'
-hook_add = '''
-let g:vue_pre_processors = ['scss','typescript']
-'''
 
 [[plugins]]
 repo = "neoclide/coc.nvim"

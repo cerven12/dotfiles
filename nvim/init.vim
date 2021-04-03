@@ -1,3 +1,4 @@
+" True Color
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -77,7 +78,7 @@ if dein#load_state('~/.cache/dein')
   " Add or remove your plugins here like this:
   let s:toml_dir = expand('~/.config/nvim')
   call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
-  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
+"  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
     if !has('nvim')
   endif
 
@@ -94,6 +95,13 @@ if dein#check_install()
   call dein#install()
 endif
 
+" --------------------------------------
+"                ColorScheme
+" -------------------------------------
+let g:solarized_termcolors=256
+syntax enable
+set background=dark
+colorscheme solarized
 
 "----------------------------------
 " Vim Tab Setting
@@ -113,18 +121,13 @@ nnoremap <silent> <leader>tr :<c-u>TabRecent<cr>
 "----------------------------------
 " AirLine
 "----------------------------------
-set laststatus=2
-let g:airline_theme = 'wombat' " Color Theme
-let g:airline_powerline_fonts = 1  " Acticate powerline font
-let g:airline#extensions#tabline#enabled = 1  " Activate tabs
-let g:airline#extensions#tabline#buffer_idx_mode = 1 " Display tab index
+" set laststatus=2
+" let g:airline_theme = 'wombat' " Color Theme
+" let g:airline_powerline_fonts = 1  " Acticate powerline font
+" let g:airline#extensions#tabline#enabled = 1  " Activate tabs
+" let g:airline#extensions#tabline#buffer_idx_mode = 1 " Display tab index
 " 選択行列の表示をカスタム(デフォルトだと長くて横幅を圧迫するので最小限に)
-let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
-
-" Color
-autocmd ColorScheme * highlight Comment ctermfg=none
- set background=dark
- colorscheme solarized
+" let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
 
 " Font
 " https://github.com/ryanoasis/nerd-fonts

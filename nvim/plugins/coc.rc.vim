@@ -175,4 +175,5 @@ let g:coc_global_extensions = [
 " coc-prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
