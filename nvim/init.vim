@@ -1,10 +1,13 @@
-" True Color
+" ------------------------------------------
+"                True Color
+" ------------------------------------------
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
+
 "--------------------------------------------
-" Key Bind
+"                Key Bind
 " -------------------------------------------
 " Visual mode
 vnoremap  <Up>     <nop>
@@ -26,8 +29,14 @@ nnoremap sh <C-w>h
 nnoremap ss :<C-u>sp<CR><C-w>j
 nnoremap sv :<C-u>vs<CR><C-w>l
 
+" -----------------------------------------
+"                <leader>
+" -----------------------------------------
+let mapleader = "\<Space>"
+
+
 "-------------------------------------------
-" Settings
+"                Settings
 " ------------------------------------------
 set number             " Display the line number.
 set showmatch          " Display the corresponding parentheses.
@@ -103,31 +112,13 @@ let g:solarized_termcolors=256
 if (has("termguicolors"))
  set termguicolors
 endif
-
 " For Neovim 0.1.3 and 0.1.4
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 " Theme
-syntax enable
 colorscheme tender
 
 "----------------------------------
-" Vim Tab Setting
-" ---------------------------------"
-let mapleader = "\<Space>"
-nnoremap <silent> <leader>tf :<c-u>tabfirst<cr>
-nnoremap <silent> <leader>tl :<c-u>tablast<cr>
-nnoremap <silent> <leader>tn :<c-u>tabnext<cr>
-nnoremap <silent> <leader>tN :<c-u>tabNext<cr>
-nnoremap <silent> <leader>tp :<c-u>tabprevious<cr>
-nnoremap <silent> <leader>te :<c-u>tabedit<cr>
-nnoremap <silent> <leader>tc :<c-u>tabclose<cr>
-nnoremap <silent> <leader>to :<c-u>tabonly<cr>
-nnoremap <silent> <leader>ts :<c-u>tabs<cr>
-nnoremap <silent> <leader>tr :<c-u>TabRecent<cr>
-
-"----------------------------------
-" AirLine
+"              AirLine
 "----------------------------------
 set laststatus=2
 let g:airline_theme = 'tender'
@@ -172,5 +163,9 @@ function! NERDCommenter_after()
     let g:ft = ''
   endif
 endfunction
+map <C-_> <plug>NERDCommenterToggle
 
+
+highlight CocErrorSign ctermfg=15 ctermbg=196
+highlight CocWarningSign ctermfg=0 ctermbg=172
 

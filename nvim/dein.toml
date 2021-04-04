@@ -78,3 +78,7 @@ hook_add = '''
 let g:NERDSpaceDelims=1
 let g:NERDDefaultAlign='left'
 '''
+
+# Color Picker
+[[plugins]]
+repo = 'KabbAmine/vCoolor.vim'
