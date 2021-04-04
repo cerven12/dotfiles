@@ -1,3 +1,5 @@
+let g:python_host_prog =  '/usr/local/bin/python3'
+
 " ------------------------------------------
 "                True Color
 " ------------------------------------------
@@ -166,6 +168,5 @@ endfunction
 map <C-_> <plug>NERDCommenterToggle
 
 
-highlight CocErrorSign ctermfg=15 ctermbg=196
-highlight CocWarningSign ctermfg=0 ctermbg=172
+
 

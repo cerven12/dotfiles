@@ -22,8 +22,6 @@ repo = 'simeji/winresizer'
 [[plugins]]
 repo = 'tomasr/molokai'
 [[plugins]]
-repo = 'hzchirs/vim-material'
-[[plugins]]
 repo = 'jacoborus/tender'
 
 [[plugins]]
@@ -34,15 +32,6 @@ let g:cpp_class_scope_highlight = 1
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
-hook_add = '''
-set laststatus=2
-let g:airline_theme = 'wombat' " Color Theme
-let g:airline_powerline_fonts = 1  " Acticate powerline font
-let g:airline#extensions#tabline#enabled = 1  " Activate tabs
-let g:airline#extensions#tabline#buffer_idx_mode = 1 " Display tab index
-" 選択行列の表示をカスタム(デフォルトだと長くて横幅を圧迫するので最小限に)
-let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
-'''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -58,12 +47,14 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'alvan/vim-closetag'
 hook_add = '''
-  let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.php,*.vue'
+  let g:closetag_filenames = '*.html,*.xhtml,*.vue'
 '''
 
+# Color Code Highlight
 [[plugins]]
 repo = 'gko/vim-coloresque'
 
+# Intellisense
 [[plugins]]
 repo = "neoclide/coc.nvim"
 merged = 0
@@ -72,6 +63,7 @@ hook_add = '''
   source ~/.config/nvim/plugins/coc.rc.vim
 '''
 
+# Comment
 [[plugins]]
 repo = 'preservim/nerdcommenter'
 hook_add = '''
@@ -82,3 +74,22 @@ let g:NERDDefaultAlign='left'
 # Color Picker
 [[plugins]]
 repo = 'KabbAmine/vCoolor.vim'
+
+# Jump to matched
+[[plugins]]
+repo = 'tmhedberg/matchit'
+
+# Automatically Rename HTML Tags
+[[plugins]]
+repo = 'AndrewRadev/tagalong.vim'
+
+# HTML Tag Match
+[[plugins]]
+repo = 'Valloric/MatchTagAlways'
+hook_add = '''
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'vue' : 1,
+    \}
+nnoremap <leader>% :MtaJumpToOtherTag<cr>
+'''

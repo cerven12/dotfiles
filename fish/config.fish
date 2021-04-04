@@ -1,8 +1,12 @@
 set PATH /usr/local/bin /usr/sbin $PATH
-# Neovimのエイリアス
+# alias of neovim
 alias vi='nvim'
 # ペイン作成のscriptのエイリアス
 alias ide='sh ide'
+# tmux
+alias tm='tmux'
+alias tmks='tmux kill-session'
+alias tmkl='tmux kill-sever'
 
 # bobthefishの設定
 set -g theme_date_format "+%Y-%m-%d %H:%M:%S"
@@ -34,3 +38,7 @@ set __fish_git_prompt_char_untrackedfiles '☡'
 set __fish_git_prompt_char_stashstate '↩'
 set __fish_git_prompt_char_upstream_ahead '+'
 set __fish_git_prompt_char_upstream_behind '-'
+# tmux の自動起動
+if test -z $TMUX
+  tmux new-session
+end

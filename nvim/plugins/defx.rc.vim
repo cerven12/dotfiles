@@ -74,4 +74,25 @@ autocmd FileType defx call s:defx_my_settings()
 	  \ defx#do_action('change_vim_cwd')
 	endfunction
 
+    call defx#custom#column('git', 'indicators', {
+  \ 'Modified'  : '✹',
+  \ 'Staged'    : '✚',
+  \ 'Untracked' : '✭',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Ignored'   : '☒',
+  \ 'Deleted'   : '✖',
+  \ 'Unknown'   : '?'
+  \ })
+
+    call  defx#custom#option('_', {
+      \ 'show_ignored_files': 1,
+      \ 'buffer_name': 'exlorer',
+      \ 'resume' : 1,
+      \ 'toggle' : 1,
+      \ 'direction': 'topleft',
+      \ 'columns': 'indent:git:icons:filename:mark',
+      \ })
+autocmd BufWritePost * call defx#redraw()
+autocmd BufEnter * call defx#redraw()
 
