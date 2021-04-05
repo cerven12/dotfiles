@@ -1,3 +1,4 @@
+" for MatchTagAlways
 let g:python_host_prog =  '/usr/local/bin/python3'
 
 " ------------------------------------------
@@ -144,7 +145,7 @@ autocmd FileType vue syntax sync fromstart
 
 
 " ------------------------------------
-"              NERD Comment
+"              NERD Commenter
 " ------------------------------------
  let g:ft = ''
 function! NERDCommenter_before()
@@ -166,7 +167,3 @@ function! NERDCommenter_after()
   endif
 endfunction
 map <C-_> <plug>NERDCommenterToggle
-
-
-
-
