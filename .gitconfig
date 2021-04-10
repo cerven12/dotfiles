@@ -18,6 +18,6 @@
   st = status
   br = branch
   ba = branch -a
-  ps = ":git push origin $(git rev-perse --abbrev-ref HEAD)"
-  pl = ":git pull origin $(git rev-perse --abbrev-ref HEAD)"
+  ps = "push origin $(git rev-perse --abbrev-ref HEAD)"
+  pl = "pull origin $(git rev-perse --abbrev-ref HEAD)"
 
