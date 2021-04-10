@@ -1,0 +1,23 @@
+[user]
+	name = takuhito9
+	email = pian.tt8.gb4@gmail.com
+[core]
+	excludesfile = /Users/takuto/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/takuto/.stCommitMsg
+[alias]
+  d = diff
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  ba = branch -a
+  ps = ":git push origin $(git rev-perse --abbrev-ref HEAD)"
+  pl = ":git pull origin $(git rev-perse --abbrev-ref HEAD)"
+

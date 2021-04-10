@@ -1,4 +1,4 @@
-# Tmux Often Used Mapping
+# Tmux Often Used Bind 
 
 ## Prefix
 * `Cntl s`

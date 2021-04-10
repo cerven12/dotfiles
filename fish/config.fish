@@ -2,11 +2,18 @@ set PATH /usr/local/bin /usr/sbin $PATH
 # alias of neovim
 alias vi='nvim'
 # ペイン作成のscriptのエイリアス
-alias ide='sh ide'
+# alias ide=''
+# tmux split-window -v -p 30
+# tmux split-window -h -p 66
+# tmux split-window -h -p 50
+# ''
 # tmux
 alias tm='tmux'
 alias tmks='tmux kill-session'
 alias tmkl='tmux kill-sever'
+
+# git
+alias g='git'
 
 # bobthefishの設定
 set -g theme_date_format "+%Y-%m-%d %H:%M:%S"
