@@ -109,7 +109,7 @@ let g:mta_filetypes = {
     \ 'html' : 1,
     \ 'vue' : 1,
     \}
-nnoremap <leader>% :MtaJumpToOtherTag<cr>
+nnoremap <leader>5 :MtaJumpToOtherTag<cr>
 '''
 
 [[plugins]]
@@ -118,3 +118,21 @@ hook_add = '''
   let g:closetag_filenames = '*.html,*.xhtml,*.vue'
 '''
 
+# closing parenthesis auto input
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+
+###################################################
+#                fzf
+###################################################
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install -add'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+hook_add = """
+  source ~/.config/nvim/plugins/fzf.rc.vim
+"""

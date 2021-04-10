@@ -11,3 +11,15 @@ let g:vue_pre_processors = ['scss','typescript']
 [[plugins]]
 repo = 'cespare/vim-toml'                                    
 
+###################################################
+#                  Mark down
+###################################################
+[[plugins]]
+repo = 'iamcco/markdown-preview.nvim'
+on_ft =  ['markdown', 'pandoc.markdown', 'rmd','md']
+build = 'cd add & yarn install'
+
+# Writing mode
+[[plugins]]
+repo = 'junegunn/goyo.vim'
+

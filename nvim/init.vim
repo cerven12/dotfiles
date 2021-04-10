@@ -90,8 +90,10 @@ if dein#load_state('~/.cache/dein')
 
   " Add or remove your plugins here like this:
   let s:toml_dir = expand('~/.config/nvim')
+  " call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
+  " call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' }) 
   call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
-"  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
     if !has('nvim')
   endif
 
