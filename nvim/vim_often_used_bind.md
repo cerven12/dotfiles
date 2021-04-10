@@ -1,7 +1,9 @@
-# NeoVim
+# NeoVim Often Used Mapping
 
-## Default Map
-### Moving and creating screens
+## Default
+### in normal mode.
+---
+#### Moving and creating screens
 * `sj` Go to the screen below.
 * `sk` Go to the upper screen.
 * `sl` Go to the right screen.
