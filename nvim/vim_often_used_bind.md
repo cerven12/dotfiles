@@ -10,6 +10,12 @@
 * `sh` Go to the left screen.
 * `ss` Create a screen underneath.
 * `sv` Create a screen on the right.
+#### Enter the same string on multiple lines.
+1. `CTRL v`
+2. Specify a selection
+3. `Shift i`
+4. Enter text
+5. `Esc`
 
 ## defx(Explorer)
 ### Start with `sf` In normal mode.
