@@ -1,6 +1,6 @@
-# NeoVim Often Used Mapping
+# NeoVim Often Used Command
 
-## Default
+## Basic 
 ### in normal mode.
 ---
 #### Moving and creating screens

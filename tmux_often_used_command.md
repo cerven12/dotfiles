@@ -1,4 +1,4 @@
-# Tmux Often Used Bind 
+# Tmux Often Used Command
 
 ## Prefix
 * `Cntl s`
