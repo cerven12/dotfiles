@@ -1,12 +1,10 @@
 set PATH /usr/local/bin /usr/sbin $PATH
 # alias of neovim
 alias vi='nvim'
+
 # ペイン作成のscriptのエイリアス
-# alias ide=''
-# tmux split-window -v -p 30
-# tmux split-window -h -p 66
-# tmux split-window -h -p 50
-# ''
+alias ide='~/.scripts/ide'
+
 # tmux
 alias tm='tmux'
 alias tmks='tmux kill-session'
