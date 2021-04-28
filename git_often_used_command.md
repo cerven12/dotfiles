@@ -25,3 +25,9 @@ in .gitconfig
 
 ## tig
 * `tig`
+
+## github cli
+* `iss` gh issue create --t `title` -b `body`
+* `isop` gh issue create -w
+* `isf` gh issue -t `title` -F `file path`
+* `isop` gh issue view -w `issue number`
