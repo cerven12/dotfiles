@@ -31,9 +31,12 @@
   op = "!hub browse"
   hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
   llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
-  # add issue 
-  adis = !"f(){ gh issue create -t \"$1\" -b \"$2\"; };f"
-  adisop = "!gh issue create -w"
-  # add issue body file
-  adisf = !"f(){ gh issue create -t \"$1\" -F $2  ;};f"
-  isop = !"f(){ gh issue view -w $1 ;};f"
+  # github cli
+  # issue 
+  ci- = !"f(){ gh issue create -t \"$1\" -b \"$2\"; };f"
+  cif = !"f(){ gh issue create -t \"$1\" -F $2  ;};f"
+  ciop = "!gh issue create -w"
+  iop = !"f(){ gh issue view -w $1 ;};f"
+  il = !"gh issue list"
+  ilop = !"gh issue list -w"
+  
