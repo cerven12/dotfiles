@@ -1,12 +1,12 @@
-###################################################
-#                    Syntax
-###################################################
-[[plugins]]
-repo = 'posva/vim-vue'
-on_ft = ['vue']
-hook_add = '''
-let g:vue_pre_processors = ['scss','typescript']
-'''
+# ###################################################
+# #                    Syntax
+# ###################################################
+# [[plugins]]
+# repo = 'posva/vim-vue'
+# on_ft = ['vue']
+# hook_add = '''
+# let g:vue_pre_processors = ['scss','typescript']
+# '''
 
 [[plugins]]
 repo = 'cespare/vim-toml'                                    
@@ -22,4 +22,3 @@ build = 'cd add & yarn install'
 # Writing mode
 [[plugins]]
 repo = 'junegunn/goyo.vim'
-

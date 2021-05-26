@@ -34,6 +34,7 @@
 * `M` Create Multiple Files
 * `d` Delete 
 * `r` Rename 
+* 'o' open or close tree
 * `.` Toggle Ignored Files 
 ---
 #### Execution Terminal Command

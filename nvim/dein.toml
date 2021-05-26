@@ -136,3 +136,15 @@ repo = 'junegunn/fzf.vim'
 hook_add = """
   source ~/.config/nvim/plugins/fzf.rc.vim
 """
+
+[[plugins]]
+repo = 'folke/tokyonight.nvim'
+
+[[plugins]]
+repo = 'marko-cerovac/material.nvim'
+hook_add ='''
+let g:material_style = 'Darker'
+'''
+
+[[plugins]]
+repo = 'Xuyuanp/scrollbar.nvim'

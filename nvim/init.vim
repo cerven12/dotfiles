@@ -92,6 +92,7 @@ if dein#load_state('~/.cache/dein')
   let s:toml_dir = expand('~/.config/nvim')
   " call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
   " call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' }) 
+  call dein#add('nvim-treesitter/nvim-treesitter', { 'merged': 0 })
   call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
   call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
     if !has('nvim')
@@ -113,14 +114,20 @@ endif
 " --------------------------------------
 "                ColorScheme
 " -------------------------------------
-let g:solarized_termcolors=256
-if (has("termguicolors"))
- set termguicolors
-endif
+" let g:solarized_termcolors=256
+" if (has("termguicolors"))
+ " set termguicolors
+" endif
 " For Neovim 0.1.3 and 0.1.4
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Theme
-colorscheme tender
+" colorscheme tender
+let g:tokyonight_transparent =  1
+let g:tokyonight_style = "night"
+colorscheme tokyonight 
+
+
+
 
 "----------------------------------
 "              AirLine
@@ -169,3 +176,21 @@ function! NERDCommenter_after()
   endif
 endfunction
 map <C-_> <plug>NERDCommenterToggle
+
+
+" treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
+
+augroup ScrollbarInit
+  autocmd!
+  autocmd CursorMoved,VimResized,QuitPre * silent! lua require('scrollbar').show()
+  autocmd WinEnter,FocusGained           * silent! lua require('scrollbar').show()
+  autocmd WinLeave,FocusLost             * silent! lua require('scrollbar').clear()
+augroup end
