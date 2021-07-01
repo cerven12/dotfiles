@@ -1,7 +1,7 @@
 # NeoVim Often Used Command
 
-## Basic 
-### in normal mode.
+## Basic
+### in normal mode
 ---
 #### Moving and creating screens
 * `sj` Go to the screen below.
@@ -10,7 +10,8 @@
 * `sh` Go to the left screen.
 * `ss` Create a screen underneath.
 * `sv` Create a screen on the right.
-#### Enter the same string on multiple lines.
+
+#### Enter the same string on multiple lines
 1. `CTRL v`
 2. Specify a selection
 3. `Shift i`
@@ -18,30 +19,30 @@
 5. `Esc`
 
 ## defx(Explorer)
-### Start with `sf` In normal mode.
+### Start with `sf` In normal mode
 ---
 #### Action
-* `h` cd .. 
-* `q` quit 
+* `h` cd ..
+* `q` quit
 * `k` ⇡
 * `j` ↓
 ---
 #### File Operation
-* `Enter` Open 
-* `E` Open split screen 
-* `K` Create Directory 
-* `N` Create File 
+* `Enter` Open
+* `E` Open split screen
+* `K` Create Directory
+* `N` Create File
 * `M` Create Multiple Files
-* `d` Delete 
-* `r` Rename 
+* `d` Delete
+* `r` Rename
 * 'o' open or close tree
-* `.` Toggle Ignored Files 
+* `.` Toggle Ignored Files
 ---
 #### Execution Terminal Command
-* `!` Execute Coomand 
+* `!` Execute Command
 ---
 #### Yank File Path
-* `yy` Yank Path 
+* `yy` Yank Path
 ---
 
 
@@ -53,6 +54,11 @@
 * `gy`  coc-type-definition
 * `gi`  coc-implementation
 * `gr`  coc-references
+
+## buffer
+* 'ctr-o' back
+* 'ctr-i' next
+* ':ls' buffer position
 
 
 ## fzf(Incremental Fuzzy Finder)

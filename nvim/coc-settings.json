@@ -12,6 +12,20 @@
   ],
   "coc.preferences.formatOnTypeFiletypes": ["json", "css", "markdown"],
   "eslint.autoFixOnSave": true,
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "toml",
+    "vim",
+    "css",
+    "scss",
+    "json"
+  ],
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",

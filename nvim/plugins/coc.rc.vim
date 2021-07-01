@@ -164,13 +164,13 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Extensions
-let g:coc_global_extensions = [
-  \ 'coc-json',
-  \ 'coc-tsserver',
-  \ 'coc-prettier',
-  \ 'coc-vetur',
-  \ 'coc-eslint',
-  \]
+" let g:coc_global_extensions = [
+  " \ 'coc-json',
+  " \ 'coc-tsserver',
+  " \ 'coc-prettier',
+  " \ 'coc-vetur',
+  " \ 'coc-eslint',
+  " \]
 
 " coc-prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
